@@ -25,4 +25,4 @@ callFunctionNTimes(printMsg, "Goodbye World!", 2)
 
 You can see that the func argument of callFunctionNTimes is defined as (String) => Unit. 
 This means that func is a function that takes a single String argument and has no return value. 
-We can pass in any function that takes this form, including both println and printTwice.
+We can pass in any function that takes this form, including both println and printMsg.
