@@ -1,0 +1,28 @@
+Let’s explore higher-order functions. These are functions that take other functions as arguments. 
+Consider the following example where we want to call a function, func, exactly n times using a function callFunctionNTimes.
+
+def callFunctionNTimes(func: (String) => Unit, argument:String, n: Int): Unit = {
+  if (n>0) {
+    func(argument)
+    callFunctionNTimes(func, argument, n-1)
+  }
+}
+  
+
+callFunctionNTimes(println, "Hello World!", 3)
+> Hello World!
+> Hello World!
+> Hello World!
+
+def printMsg(x: String): Unit = {
+  println(x)
+}
+
+callFunctionNTimes(printMsg, "Goodbye World!", 2)
+> Goodbye World!
+> Goodbye World!
+
+
+You can see that the func argument of callFunctionNTimes is defined as (String) => Unit. 
+This means that func is a function that takes a single String argument and has no return value. 
+We can pass in any function that takes this form, including both println and printTwice.
